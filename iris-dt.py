@@ -7,7 +7,10 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 import matplotlib.pyplot as plt 
 import seaborn as sns
 
-mlflow.set_tracking_uri("http://127.0.0.1:5000")    #step 08 --> point 10
+import dagshub
+dagshub.init(repo_owner='anujahlawat.ds', repo_name='05-learning-mlflow-remote-exp-tracking-using-dagshub', mlflow=True)
+
+mlflow.set_tracking_uri("https://dagshub.com/anujahlawat.ds/05-learning-mlflow-remote-exp-tracking-using-dagshub.mlflow")    #step 08 --> point 10
 
 iris = load_iris()
 X = iris.data 
